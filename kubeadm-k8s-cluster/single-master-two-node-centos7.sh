@@ -43,7 +43,8 @@ yum-config-manager \
     --add-repo \
     https://download.docker.com/linux/centos/docker-ce.repo
 echo "Install containerd..."
-yum update -y && sudo yum install -y containerd.io
+yum update -y && yum install -y checkpolicy libcgroup audit-libs-python python-IPy setools-libs libsemanage-python.x86_64 libseccomp
+yum install -y containerd.io
 
 echo "Configure containerd"
 
