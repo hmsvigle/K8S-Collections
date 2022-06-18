@@ -1,30 +1,55 @@
-# Aliases:
+### 1. Create some Aliases:
+
+```sh
 alias k='kubectl'
 alias kyml='kubectl -o yaml --export'
 alias kgd='kubectl get deploy'
 alias kgp='kubectl get po'
+```
 
+### 2. For different ns, create diff alias
+### 3. Always keep backup of provided yaml file
 
-# for dif ns, create diff alias
-# Always keep backup of provided yaml file
-
-# Imp Links useful for CKAD certification
+### 4. Imp Links useful for CKAD certification
 https://portal.linuxfoundation.org/portal/kubernetes
 https://training.cncf.io/portal
 https://www.examslocal.com/Candidate
 
-# Sometimes, direct edit of pod, doesnt work. So we need to delete the pod & recreate it 
-# networkpolicy -> netpol
-# set-context/use-context for every namespace during every qn
-	- k get ns
-  - k config get-contexts
-	- k config set-context kubernetes-admin@kubernetes --namespace=mynamespace
+### 5. Sometimes, direct edit of pod, doesnt work. So we need to delete the pod & recreate it 
+ `kubectl replace -f deployment.yaml`
+ 
+### 6. Shortforms 
 
-# kubectl explain pods.spec.containers --recursive
-# cat > filename
-	Paste content
-	ctrl + d 
-# kubectl autoscale deployment foo --min=2 --max=10           # Auto scale a deployment "foo"
+```sh
+networkpolicy -> netpol
+pods -> po
+nodes -> no
+configmap -> cm
+
+```
+
+### 7. set-context/use-context for every namespace during every qn
+
+```sh	
+  $ k get ns
+  $ k config get-contexts
+  $ k config set-context kubernetes-admin@kubernetes --namespace=mynamespace
+```
+
+### 8. Find out fields with explain command.
+
+```sh
+$ kubectl explain pods.spec.containers --recursive
+```
+### 9. terminal Shortcuts:
+```bash
+cat > filename
+  Paste content
+  ctrl + d 
+```
+
+###  
+kubectl autoscale deployment foo --min=2 --max=10           # Auto scale a deployment "foo"
 
 # Force replace, delete and then re-create the resource. Will cause a service outage.
  kubectl replace --force -f ./updated-pod.yaml
