@@ -48,26 +48,36 @@ cat > filename
   ctrl + d 
 ```
 
-###  
+### 10. Scaling
 kubectl autoscale deployment foo --min=2 --max=10           # Auto scale a deployment "foo"
 
-# Force replace, delete and then re-create the resource. Will cause a service outage.
- kubectl replace --force -f ./updated-pod.yaml
-# run a comand in the pod (-it | without -it)
- kubectl run busybox2 --image=busybox --restart=Never  --command  -it -- env
- kubectl autoscale deploy nginx --min=5 --max=10 --cpu-percent=80 # autoscale the deployment
+### 11. Force replace, delete and then re-create the resource. 
+  * Will cause a service outage.
+ `kubectl replace --force -f ./updated-pod.yaml`
+ 
+### 12. kubectl run:
+*  with -it | without -it
+ ```sh
+  kubectl run busybox2 --image=busybox --restart=Never  --command  -it -- env
+  kubectl autoscale deploy nginx --min=5 --max=10 --cpu-percent=80 # autoscale the deployment
+  ```
+### 13. vim:
 
-vim:
-````
-jump_by_end-of-word: e
-jump_by_word_backward: b
-half_downwards : ctr + d
-half_upwards : ctr + u
-begining_of_line: 0
-end_of_line: $
+```sh
+  jump_by_end-of-word: e
+  jump_by_word_backward: b
+  half_downwards : ctr + d
+  half_upwards : ctr + u
+  begining_of_line: 0
+  end_of_line: $
+  delete word: 
+```
 
-Commands:
-`````````
+### 14. Commands:
+
+```bash
+
+# generate pod yaml/Deploy Pod
 k run --generator=run-pod/v1  redis --image=redis:alpine -l tier=db --restart=Never
 
 # For deployment, apiVersion could be an issue, so best is to use "create deployment" command
@@ -76,31 +86,47 @@ k run nginx1 --image=nginx --restart=Never --env=var1=val1 -n default
 k run nginx --image=nginx --restart=Never --dry-run -o yaml -n default --command -- env > nginx.yaml
 k run nginx --image=nginx --restart=Never --dry-run -o yaml -n default --command -it -- env > nginx.yaml
 
-&&& --> k get po -o yaml --export # export -> would give details without cluster specific information
+# Export is deprecated now.
+ k get po -o yaml --export # export -> would give details without cluster specific information
 
+# restart 
 k run hazelcast --image=hazelcast --restart=Never \
-			--port=5701 \
-			--env="DNS_DOMAIN=cluster" --env="POD_NAMESPACE=default" \
-			--labels="app=hazelcast,env=prod" \
-			--replicas=5 \
+      --port=5701 \
+      --env="DNS_DOMAIN=cluster" --env="POD_NAMESPACE=default" \
+      --labels="app=hazelcast,env=prod" \
+      --replicas=5 \
       --serviceaccount=sa \
       -l bu=finance \
       --env="prod=dev" \
       --requests='cpu=100m,memory=256Mi' --limits='cpu=200m,memory=512Mi' \
-      --dry-run
-			--command -- /bin/sh -c "echo hello-world"
+      --dry-run \
+      --command -- /bin/sh -c "echo hello-world"
 
-kubectl set serviceaccount deployment fe myuser
+ # Set service account 
+  kubectl set serviceaccount deployment fe myuser
+```
+#### 14.1 taint & tolerations Commands
+  * Tolerations can not be added with command. yaml has to be edited.
 
-# Taint
-kubectl taint nodes node1 key=value:NoSchedule
+  ```
+   # Taint
+   kubectl taint nodes node1 key=value:NoSchedule
+   # verify taint 
+   k describe nodes controlplane | grep -i taint
+   # Remove taint 
+   
+   # Tolerations
+ 
+  ```
 
-# Add annotations:
-k annotate po nginx1 nginx2 nginx3 description='my description'
-# Remove annotation
-k annotate po nginx1 description-
+#### 14.2 A annotations:
+ ````
+ k annotate po nginx1 nginx2 nginx3 description='my description' 
+  
+ # Remove annotation
+  k annotate po nginx1 description-
 
-# Multipod container
+ # Multipod container
 kyml run busybox --image=busybox --restart=Never --dry-run -- /bin/sh -c 'echo hello; sleep 3600' > multicont-pod.yaml
 vi multicont-pod.yaml
 	Update container field & remove "restart=Never"
