@@ -50,5 +50,13 @@ OR
 
    `kubectl replace -f deployment.yaml`
 
+ * Taint: `taint-effect`: `NoSchedule`|`PreferNoSchedule`|`NoExecute`
+   `kubectl taint nodes node01 key=value:taint-effect`
+   `kubectl describe node01 | grep -i taint`
 
+ * Tolerations:
+   ```sh
+   
+   ```
+   
 
