@@ -46,7 +46,9 @@ OR
 
    `kubectl create deployment --image=nginx nginx --replicas=4 --dry-run=client -o yaml > nginx-deployment.yaml`
 
+ * kubectl delete & apply a file:
 
+   `kubectl replace -f deployment.yaml`
 
 
 
