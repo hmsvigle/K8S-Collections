@@ -6,62 +6,7 @@ alias kyml='kubectl -o yaml --export'
 alias kgd='kubectl get deploy'
 alias kgp='kubectl get po'
 ```
-
-### 2. For different ns, create diff alias
-### 3. Always keep backup of provided yaml file
-
-### 4. Imp Links useful for CKAD certification
-https://portal.linuxfoundation.org/portal/kubernetes
-https://training.cncf.io/portal
-https://www.examslocal.com/Candidate
-
-### 5. Sometimes, direct edit of pod, doesnt work. So we need to delete the pod & recreate it 
- `kubectl replace -f deployment.yaml`
- 
-### 6. Shortforms 
-
-```sh
-networkpolicy -> netpol
-pods -> po
-nodes -> no
-configmap -> cm
-
-```
-
-### 7. set-context/use-context for every namespace during every qn
-
-```sh	
-  $ k get ns
-  $ k config get-contexts
-  $ k config set-context kubernetes-admin@kubernetes --namespace=mynamespace
-```
-
-### 8. Find out fields with explain command.
-
-```sh
-$ kubectl explain pods.spec.containers --recursive
-```
-### 9. terminal Shortcuts:
-```bash
-cat > filename
-  Paste content
-  ctrl + d 
-```
-
-### 10. Scaling
-kubectl autoscale deployment foo --min=2 --max=10           # Auto scale a deployment "foo"
-
-### 11. Force replace, delete and then re-create the resource. 
-  * Will cause a service outage.
- `kubectl replace --force -f ./updated-pod.yaml`
- 
-### 12. kubectl run:
-*  with -it | without -it
- ```sh
-  kubectl run busybox2 --image=busybox --restart=Never  --command  -it -- env
-  kubectl autoscale deploy nginx --min=5 --max=10 --cpu-percent=80 # autoscale the deployment
-  ```
-### 13. vim:
+### 2. vim:
 
 ```sh
   jump_by_end-of-word: e
@@ -72,6 +17,60 @@ kubectl autoscale deployment foo --min=2 --max=10           # Auto scale a deplo
   end_of_line: $
   delete word: 
 ```
+### 3. For different ns, create diff alias
+### 4. Always keep backup of provided yaml file
+
+### 5. Imp Links useful for CKAD certification
+https://portal.linuxfoundation.org/portal/kubernetes
+https://training.cncf.io/portal
+https://www.examslocal.com/Candidate
+
+### 6. Sometimes, direct edit of pod, doesnt work. So we need to delete the pod & recreate it 
+ `kubectl replace -f deployment.yaml`
+ 
+### 7. Shortforms 
+
+```sh
+networkpolicy -> netpol
+pods -> po
+nodes -> no
+configmap -> cm
+
+```
+
+### 8. set-context/use-context for every namespace during every qn
+
+```sh	
+  $ k get ns
+  $ k config get-contexts
+  $ k config set-context kubernetes-admin@kubernetes --namespace=mynamespace
+```
+
+### 9. Find out fields with explain command.
+
+```sh
+$ kubectl explain pods.spec.containers --recursive
+```
+### 10. terminal Shortcuts:
+```bash
+cat > filename
+  Paste content
+  ctrl + d 
+```
+
+### 11. Scaling
+kubectl autoscale deployment foo --min=2 --max=10           # Auto scale a deployment "foo"
+
+### 12. Force replace, delete and then re-create the resource. 
+  * Will cause a service outage.
+ `kubectl replace --force -f ./updated-pod.yaml`
+ 
+### 13. kubectl run:
+*  with -it | without -it
+ ```sh
+  kubectl run busybox2 --image=busybox --restart=Never  --command  -it -- env
+  kubectl autoscale deploy nginx --min=5 --max=10 --cpu-percent=80 # autoscale the deployment
+  ```
 
 ### 14. Commands:
 
