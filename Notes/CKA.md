@@ -6,3 +6,4 @@
 
 
 * Troubleshooting Cluster issues:[Link](https://kubernetes.io/docs/tasks/debug/debug-cluster/)
+  * `journalctl -u kubelet.service -f`
