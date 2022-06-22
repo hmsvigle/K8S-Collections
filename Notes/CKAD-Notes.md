@@ -6,8 +6,9 @@ alias kyml='kubectl -o yaml --export'
 alias kgd='kubectl get deploy'
 alias kgp='kubectl get po'
 ```
-### 2. vim:
+### 2. Shortcuts:
 
+* `VIM`:
 ```sh
   jump_by_end-of-word: e
   jump_by_word_backward: b
@@ -16,6 +17,13 @@ alias kgp='kubectl get po'
   begining_of_line: 0
   end_of_line: $
   delete word: 
+```
+* `cmd`:
+```sh
+  ctrl + a --> to the front of line
+  ctrl + e --> end of line
+  ctrl + w --> delete a word
+  
 ```
 ### 3. For different ns, create diff alias
 ### 4. Always keep backup of provided yaml file
