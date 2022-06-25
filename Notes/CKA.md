@@ -4,6 +4,12 @@
   * Install pod-network add-ons (flannel, weave etc)
   * 
 
-
 * Troubleshooting Cluster issues:[Link](https://kubernetes.io/docs/tasks/debug/debug-cluster/)
-  * `journalctl -u kubelet.service -f`
+
+* Node stopped/notready
+  * Describe node & check status.
+  * Start kubelet:- `systemctl status kubelet` || `service kubelet start`
+  * chek logs of kubelet : `journalctl -u kubelet.service -f`
+  * check the kubelet.conf file @ `/etc/kubernetes/kubelet.conf`
+  * check config file of kubelet: `/var/lib/kubelet/config.yaml`
+  * 
