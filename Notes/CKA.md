@@ -13,3 +13,5 @@
   * check the kubelet.conf file @ `/etc/kubernetes/kubelet.conf`
   * check config file of kubelet: `/var/lib/kubelet/config.yaml`
   * 
+* Backup & Restore:
+  *  
