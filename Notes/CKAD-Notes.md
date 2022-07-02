@@ -6,6 +6,11 @@ alias kyml='kubectl -o yaml --export'
 alias kgd='kubectl get deploy'
 alias kgp='kubectl get po'
 ```
+* Its `very IMP` to set this, as it will save lot of time.
+```sh
+export do="--dry-run=client -o yaml"
+ # k get pod x $do
+```
 ### 2. Shortcuts:
 
 * `VIM`:
