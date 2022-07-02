@@ -11,6 +11,14 @@ alias kgp='kubectl get po'
 export do="--dry-run=client -o yaml"
  # k get pod x $do
 ```
+* Use 2 spaces for tab:
+
+```sh
+set tabstop=2
+set expandtab
+set shiftwidth=2
+
+```
 ### 2. Shortcuts:
 
 * `VIM`:
