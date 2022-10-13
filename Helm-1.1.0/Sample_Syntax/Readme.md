@@ -26,6 +26,7 @@ ports:
 ````
 
 **`Template yaml: Parsging syntax`**
+  * Service.yaml
 ````yaml
   ports:
   {{- range .Values.ports }}
@@ -35,7 +36,10 @@ ports:
     targetPort: {{ .containerPort }}
   {{- end }}
 ````
-
-
+* Deployment.yaml
+````yaml
+        ports:
+        {{- toYaml .Values.ports | nindent 8 }}
+````
 ## 2. Example:
 
