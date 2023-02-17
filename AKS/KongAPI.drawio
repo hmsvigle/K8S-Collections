@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-02-17T15:41:31.524Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="6Q8x5xWLsyRYjop6EtQf" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-17T15:50:55.176Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="REfbpCtWAFR6QUWGlzeO" version="20.8.20" type="github">
   <diagram name="Page-1" id="8ppmVkJU3CkYKlq6dA0x">
-    <mxGraphModel dx="1434" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1458" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -117,7 +117,7 @@
           <mxGeometry x="147.02" y="930" width="261.99" height="20" as="geometry" />
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-73" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="710" y="1035" width="320" height="215" as="geometry" />
+          <mxGeometry x="710" y="1035" width="420" height="425" as="geometry" />
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-74" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#e2e9f3;dashed=1;strokeColor=#007FFF;" edge="1" parent="1" source="V-wwlSEz8VEvQ7FsHcgh-76" target="V-wwlSEz8VEvQ7FsHcgh-63">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -130,10 +130,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-75" value="" style="sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];verticalLabelPosition=bottom;align=center;verticalAlign=top;shape=mxgraph.kubernetes.icon;prIcon=pod" vertex="1" parent="1">
-          <mxGeometry x="202.66000000000003" y="1228.67" width="50" height="48" as="geometry" />
+          <mxGeometry x="202.66" y="1228.67" width="47.34" height="41.33" as="geometry" />
         </mxCell>
-        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-76" value="&lt;b&gt;* Oneapi Config - &lt;br&gt;&lt;/b&gt;&amp;nbsp; &amp;nbsp;-&amp;gt; Team &lt;br&gt;&amp;nbsp; &amp;nbsp;-&amp;gt; API &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;-&amp;gt; Version &lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; * identity Provider&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; * Authorize Gateways once version is configured&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; * Env:&amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp; &amp;nbsp;-&amp;gt; Gateway:&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; * key &amp;amp; Secret&lt;br&gt;&amp;nbsp; &amp;nbsp;&lt;br&gt;&amp;nbsp;&lt;b&gt;*&lt;/b&gt; &lt;b&gt;OneApi Hub:&lt;br&gt;&amp;nbsp; &amp;nbsp; *&amp;nbsp;&lt;br&gt;&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="710" y="1040" width="310" height="210" as="geometry" />
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-76" value="&lt;ul&gt;&lt;li&gt;&lt;b&gt;Oneapi Config - (Registration of API)&lt;/b&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Team&lt;/li&gt;&lt;li&gt;API&lt;/li&gt;&lt;li&gt;Version &lt;/li&gt;&lt;ul&gt;&lt;li&gt;Identity Provider&lt;/li&gt;&lt;li&gt;Authorize Gateways once version is configured&lt;/li&gt;&lt;li&gt;Environments&amp;nbsp;&amp;nbsp;&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Gateway:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;b style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#6314ff&quot;&gt;Key &amp;amp; Secret&lt;/font&gt;&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;font color=&quot;#6314ff&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;OneApi Hub: (Subscription to other registered APIs)&lt;/b&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Susbscribe API&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Client ID (IAM Request) to subscribe&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1060" width="400" height="390" as="geometry" />
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-77" value="&lt;b&gt;/communication&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="192.65999999999997" y="1170" width="60" height="30" as="geometry" />
