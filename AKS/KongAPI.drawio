@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2023-02-20T06:30:05.795Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="yNVATtR0A_fkHMUAArh_" version="20.8.20" type="github">
+<mxfile host="app.diagrams.net" modified="2023-02-20T07:49:11.792Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36" etag="ydQgeb0B_rsaGRB6YNtr" version="20.8.20" type="github">
   <diagram name="Page-1" id="8ppmVkJU3CkYKlq6dA0x">
-    <mxGraphModel dx="1458" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1434" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-136" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="880" y="2050" width="350" height="91.5" as="geometry" />
+        </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-1" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#6c8ebf;dashed=1;fillColor=#dae8fc;" vertex="1" parent="1">
           <mxGeometry x="70" y="180" width="460" height="340" as="geometry" />
         </mxCell>
@@ -107,9 +110,9 @@
           <mxGeometry x="147.02" y="930" width="261.99" height="20" as="geometry" />
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-73" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="710" y="1035" width="420" height="305" as="geometry" />
+          <mxGeometry x="710" y="1035" width="420" height="175" as="geometry" />
         </mxCell>
-        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-74" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#e2e9f3;dashed=1;strokeColor=#007FFF;exitX=0.013;exitY=0.478;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="V-wwlSEz8VEvQ7FsHcgh-76" target="V-wwlSEz8VEvQ7FsHcgh-63">
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-74" value="" style="endArrow=classic;html=1;rounded=0;fillColor=#e2e9f3;dashed=1;strokeColor=#007FFF;" edge="1" parent="1" source="V-wwlSEz8VEvQ7FsHcgh-76" target="V-wwlSEz8VEvQ7FsHcgh-63">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="530" y="1250" as="sourcePoint" />
             <mxPoint x="390" y="1290" as="targetPoint" />
@@ -122,8 +125,8 @@
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-75" value="" style="sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];verticalLabelPosition=bottom;align=center;verticalAlign=top;shape=mxgraph.kubernetes.icon;prIcon=pod" vertex="1" parent="1">
           <mxGeometry x="202.66" y="1228.67" width="47.34" height="41.33" as="geometry" />
         </mxCell>
-        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-76" value="&lt;ul&gt;&lt;li&gt;&lt;b&gt;Oneapi Config - (Registration of API)&lt;/b&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Team&lt;/li&gt;&lt;li&gt;API&lt;/li&gt;&lt;li&gt;Version &lt;/li&gt;&lt;ul&gt;&lt;li&gt;Identity Provider (APIKey/GAS-OIDC)&lt;/li&gt;&lt;li&gt;Authorize Gateways once version is configured&lt;/li&gt;&lt;li&gt;Environments&amp;nbsp; (Dev,Test,Prod etc)&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Gateway:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;b style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#6314ff&quot;&gt;Key &amp;amp; Secret&lt;/font&gt;&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;font color=&quot;#6314ff&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;b&gt;OneApi Hub: (Subscription to other registered APIs)&lt;/b&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Susbscribe API&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Client ID (IAM Request) to subscribe&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;ul&gt;&lt;li&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="710" y="1040" width="400" height="270" as="geometry" />
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-76" value="&lt;ul&gt;&lt;li&gt;&lt;b&gt;Oneapi Config - (Registration of API)&lt;/b&gt;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;Team&lt;/li&gt;&lt;li&gt;API&lt;/li&gt;&lt;li&gt;Version &lt;/li&gt;&lt;ul&gt;&lt;li&gt;Identity Provider (APIKey/GAS-OIDC)&lt;/li&gt;&lt;li&gt;Authorize Gateways once version is configured&lt;/li&gt;&lt;li&gt;Environments&amp;nbsp; (Dev,Test,Prod etc)&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;Gateway:&lt;/li&gt;&lt;ul&gt;&lt;li&gt;&lt;b style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;font style=&quot;border-color: var(--border-color);&quot; color=&quot;#6314ff&quot;&gt;Key &amp;amp; Secret&lt;/font&gt;&lt;/b&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;/ul&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="720" y="1042.5" width="400" height="157.5" as="geometry" />
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-77" value="Authentication/&lt;br&gt;Authorization" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="406.35" y="1040" width="92.66" height="30" as="geometry" />
@@ -139,6 +142,22 @@
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-88" value="" style="aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/azure2/containers/Kubernetes_Services.svg;fillColor=#e2e9f3;" vertex="1" parent="1">
           <mxGeometry x="101.69" y="2410" width="45.33" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-131" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#0000FF;fontColor=#6314FF;fillColor=#e2e9f3;" edge="1" parent="1" source="V-wwlSEz8VEvQ7FsHcgh-89">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="830" y="1910" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="870" y="2163" />
+              <mxPoint x="870" y="1910" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.353;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;dashed=1;strokeColor=#001224;fontColor=#6314FF;fillColor=#e2e9f3;" edge="1" parent="1" source="V-wwlSEz8VEvQ7FsHcgh-89" target="V-wwlSEz8VEvQ7FsHcgh-108">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="565" y="2150" />
+            </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-89" value="&lt;b&gt;oneApi&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
           <mxGeometry x="730" y="2133.34" width="120" height="60" as="geometry" />
@@ -210,7 +229,7 @@
           <mxGeometry x="763" y="1880" width="54" height="60" as="geometry" />
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-116" value="&lt;span&gt;Subscribe to API&lt;/span&gt;" style="text;html=1;strokeColor=#9673a6;fillColor=#e1d5e7;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
-          <mxGeometry x="660" y="2025" width="130" height="30" as="geometry" />
+          <mxGeometry x="650" y="2020" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-117" value="&lt;span&gt;Client-ID From IAM Request&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="757" y="1955" width="92.66" height="30" as="geometry" />
@@ -267,6 +286,15 @@
         </mxCell>
         <mxCell id="V-wwlSEz8VEvQ7FsHcgh-118" value="&lt;span&gt;Client-ID From IAM Request&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="592.5" y="2055" width="92.66" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-132" value="&lt;b&gt;APIKey&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#B09500;fillColor=#e3c800;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="880" y="2000" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-133" value="&lt;b&gt;APIKey&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;strokeColor=#B09500;fillColor=#e3c800;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="540" y="2103.34" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="V-wwlSEz8VEvQ7FsHcgh-135" value="&lt;ul style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); text-align: left;&quot;&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;OneApi Hub: (Subscription to other registered APIs)&lt;/b&gt;&lt;/li&gt;&lt;ul style=&quot;border-color: var(--border-color);&quot;&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;Susbscribe API&lt;/li&gt;&lt;li style=&quot;border-color: var(--border-color);&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;Client ID (IAM Request) to subscribe&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#6314FF;" vertex="1" parent="1">
+          <mxGeometry x="860" y="2060" width="360" height="73.34" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
