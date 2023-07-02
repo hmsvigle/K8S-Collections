@@ -1,0 +1,189 @@
+# Default values for reference-repo.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# type will decide deployment / statefulste to be deployed.
+type:
+  statefulset:
+    enabled: false
+  deployment:
+    enabled: true
+
+# Specify a resource name prefix for generated k8s resources
+resource:
+  name: "web-app2"
+  labels:
+    app: web-app2
+    type: frontend-service
+
+# Update the replica count as per requirement
+replicaCount: 1
+
+# Image details
+image:
+  repository: "registry.app.corpintra.net/duke/web-app2"
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "web-app-dev-22.04.10"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: false
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+# To have Configmap generated, remove {} & add data as per below sample.
+config: {}
+
+#
+# Enable probing if required & then Comment/Uncomment httpGet/tcpSocket section as per application. Comment the other one. Else it will give exception.
+probes:
+  enabled: false
+  liveness:
+  tcpSocket:
+      port: 8080
+  initialDelaySeconds: 45
+  periodSeconds: 60
+  timeoutSeconds: 15
+    #httpGet:
+      #path: /AggregatorMS/healthbeat
+      #port: 8080
+      #scheme: HTTP
+  readiness:
+    initialDelaySeconds: 60
+    periodSeconds: 60
+    timeoutSeconds: 15
+    #httpGet:
+      #path: /AggregatorMS/healthbeat
+      #port: 8080
+      #scheme: HTTP
+    #tcpSocket:
+      #port: 8080
+
+
+securityContext:
+  runAsNonRoot: true
+  runAsUser: 1000
+  fsGroup: 1000
+
+# Update the List of ports in the similar format. We will enhance this feature next release
+#
+service:
+  type: ClusterIP
+  ports:
+  - name: tcp-80
+    port: 8080
+    protocol: TCP
+    targetPort: 80
+  - name: tcp-8001
+    port: 8001
+    protocol: TCP
+    targetPort: 8001
+  - name: tcp-8081
+    port: 8081
+    protocol: TCP
+    targetPort: 8081
+
+# Update the List of ports in the similar format. We will enhance this feature next release
+#
+ports:
+  - containerPort: 80
+    protocol: TCP
+  - containerPort: 8001
+    protocol: TCP
+  - containerPort: 8081
+    protocol: TCP
+
+# Secret to be created
+# Name would be appname-secret. We will enhance it later
+#
+secrets: []
+
+  # dbHost: "jdbc:oracle:thin:@//smtca00683.rd.corpintra.net:1521/dukedi01.rd.corpintra.net"
+
+
+# Update Environmental variables
+env: []
+
+envFrom: []
+
+#- secretRef:
+    #name: mongodb-enterprise-secret
+
+# With volume, provides, it creates volumes with emptyDir for Deployments
+volumeMounts:
+  - name: web-app2-config
+    mountPath: /usr/share/nginx/html/dukeappenv.js
+    subPath: dukeappenv.js
+
+
+# Volume is not required, if we are using VolumeClaimTemplates
+volumes:
+  emptyDir: false
+  configMap: true
+  reference:
+    name: web-app-config
+
+# ClaimName should match from one of the volumeMount names.
+# volumeClaimTemplates section will be generated
+# Need to be updated for the array/List. Currently works for single Claim
+#
+# For statefulset only, Persistence section is being referred.
+#persistence: []
+  #size: 5Gi
+  #claimName: mongo-data
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: duke-dev.app.corpintra.net
+      paths:
+        - path: /supplier-app
+          pathType: Prefix
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources:
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  limits:
+    cpu: 350m
+    memory: 500Mi
+  requests:
+    cpu: 100m
+    memory: 300Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+# To be generated
+networkpolicy:
+  enabled: true
+

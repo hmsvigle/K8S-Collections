@@ -1,0 +1,107 @@
+{{- if .Values.type.deployment.enabled }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.resource.name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- toYaml .Values.resource.labels | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{ else }}
+  replicas: {{ .Values.autoscaling.minReplicas  | default 1 }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- toYaml .Values.resource.labels | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- toYaml .Values.resource.labels  | nindent 8 }}
+    spec:
+      securityContext:
+        {{- toYaml .Values.securityContext | nindent 8 }}
+      {{- if .Values.volumeMounts }}  
+      volumes:
+        {{- $volume := .Values.volumes }}
+        {{- $configmap := .Values.resource.name }}
+        {{- range .Values.volumeMounts }}
+        - name: {{ .name | title | lower }}
+          {{- if $volume.emptyDir }}
+          emptyDir: {}
+          {{- else if $volume.configMap }}
+             {{- if $volume.reference }}
+          configMap:
+            name: {{ $volume.reference.name }}
+             {{- else }}
+            name: {{ $configmap }}-config
+             {{- end }}
+          {{- end }}
+         {{- end }}
+      {{- end }}
+      
+      containers:
+      - name: {{ .Values.resource.name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+
+        {{- if .Values.env }}
+        env:
+        {{- toYaml .Values.env | nindent 8 }}
+        {{- end }}
+
+        {{- if .Values.envFrom }}
+        envFrom:
+        {{- toYaml .Values.envFrom | nindent 8 }}
+        {{- end }}
+
+        ports:
+        {{- toYaml .Values.ports | nindent 8 }}
+
+        {{- if .Values.volumeMounts }}
+        volumeMounts:
+        {{- toYaml .Values.volumeMounts | nindent 8 }}
+        {{- end }}
+
+        {{- if .Values.probes.enabled }}
+        livenessProbe:
+          initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds | default 45 }}
+          periodSeconds: 60
+          timeoutSeconds: 15
+          {{- if .Values.probes.liveness.httpGet }}
+          httpGet:
+            {{- toYaml .Values.probes.liveness.httpGet | nindent 12 }}
+          {{ else }}
+          tcpSocket:
+            {{- toYaml .Values.probes.liveness.tcpSocket | nindent 12 }}
+          {{- end }}
+        readinessProbe:
+          initialDelaySeconds: {{ .Values.probes.readiness.initialDelaySeconds | default 60 }}
+          periodSeconds: 60
+          timeoutSeconds: 15
+          {{- if .Values.probes.readiness.httpGet }}
+          httpGet:
+            {{- toYaml .Values.probes.readiness.httpGet | nindent 12 }}
+          {{ else }}
+          tcpSocket:
+          {{- toYaml .Values.probes.readiness.tcpSocket | nindent 12 }}
+          {{- end }}
+        {{- end }}
+
+        resources:
+            {{- toYaml .Values.resources | nindent 10 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+{{- end }}
+
