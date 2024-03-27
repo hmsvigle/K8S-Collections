@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="34312bd5-ccc5-4a2b-9c0c-d8525c1b4bbe" activeEnvironment="Default" name="REST Project 1" soapui-version="5.7.2" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="703d4fb2-939b-4463-8479-35423e645602" wadlVersion="http://wadl.dev.java.net/2009/02" name="" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://PDC2-L-8QTXR14:8080/</con:endpoint></con:endpoints><con:resource name="DU-NEW" path="/DU-NEW" id="894e5120-f9d8-4e6a-b673-90550122134e"><con:settings/><con:parameters/><con:method name="DU-NEW 1" id="1e3e55b8-bca6-4d69-8dd2-753f0cca9fe6" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="687d75af-cc1c-45d8-bf68-52cbca6c718b" mediaType="application/json"><con:settings/><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:restMockService id="1c7f619f-69f9-4aba-8807-83bc239a8b47" port="8080" path="/" host="PDC2-L-8QTXR14" name="REST MockService 1"><con:settings/><con:properties/><con:restMockAction name="/DU-NEW" method="GET" resourcePath="/DU-NEW" id="e7d684b0-bbec-48f5-a2f3-e53900d5b451"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response44" id="6da0a4e3-a5e6-43b9-8c82-3413054f05c3" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+	"name":
+}
+</con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
