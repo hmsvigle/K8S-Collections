@@ -41,3 +41,4 @@ USER soapui
 EXPOSE 8080
 
 # Start SoapUI
+ENTRYPOINT ["sh", "-c", "${SOAPUI_HOME}/bin/mockservicerunner.sh -Djava.awt.headless=true -m ${SOAPUI_HIME}/Final-Du-Project-soapui-project.xml"]
