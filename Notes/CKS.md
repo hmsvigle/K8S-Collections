@@ -9,3 +9,6 @@
     restart the node `shutdown -r now`
     Review loading : lsmod | grep -i sctp
     ```
+* Disable Open Ports on Nodes
+  * netstat -anpt | grep -w LISTEN
+  * Service file shows what services & ports are in use: cat `/etc/services` 
