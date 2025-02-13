@@ -1,14 +1,16 @@
-FROM  dockerhub/i3-mirror/docker.io_ubuntu:latest
+FROM  docker.io/ubuntu:20.04
 ENV DEBIAN_FRONTEND=noninteractive \
     USR_HOME=/home/tool \
     PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 RUN set -x && \
     apt-get update -y && \
-#    apt-get install -y software-properties-common && \
-#    apt-get update -y && \
     apt-get install -y wget curl iputils-ping net-tools telnet traceroute  netcat dnsutils && \
-    apt-get install -y proxychains && \
+    apt-get install -y proxychains openssl-client && \
+    apt-get clean
+
+RUN set -x && \
+    apt-get update -y openssl-client && \
     apt-get clean
 
 RUN set -x && \
@@ -22,3 +24,4 @@ RUN set -x && \
     chown -R tool:tool /home/tool/
 
 WORKDIR $USR_HOME
+ 
