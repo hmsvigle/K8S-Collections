@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
 RUN set -x && \
     apt-get update -y && \
     apt-get install -y wget curl iputils-ping net-tools telnet traceroute  netcat dnsutils && \
-    apt-get install -y proxychains openssl-client && \
+    apt-get install -y proxychains && \
     apt-get clean
 
 RUN set -x && \
